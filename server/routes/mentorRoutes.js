@@ -1,12 +1,14 @@
 import e from "express";
+import { mentorLogin, mentorLogout, mentorProfile, mentorSignup } from "../controllers/mentorControllers.js";
+import { mentorAuth } from "../middlewares/mentorAuth.js";
 
 const router= e.Router();
 
-router.post('/signup')
-router.post('/login')
+router.post('/signup',mentorSignup)
+router.post('/login',mentorLogin)
+router.put('/logout',mentorAuth, mentorLogout)
+router.get('/profile',mentorAuth,mentorProfile)
 router.put('/reset-password')
-router.put('/logout')
-router.get('/profile')
 router.put('/profile-update')
 router.delete('/delete-account')
 

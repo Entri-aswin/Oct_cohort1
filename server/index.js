@@ -1,10 +1,13 @@
 import express from "express";
 import { connectDB } from "./config/db.js";
 import { apiRouter } from "./routes/index.js";
+import cookieParser from "cookie-parser";
+
+connectDB()
 
 const app = express();
 app.use(express.json());
-connectDB()
+app.use(cookieParser());
 
 const port = 3000;
 
