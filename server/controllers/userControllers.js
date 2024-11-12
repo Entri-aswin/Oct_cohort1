@@ -52,6 +52,9 @@ export const userLogin = async (req, res, next) => {
             return res.status(400).json({ message: "user not authenticated" });
         }
 
+        if(userExist.isActive ==false){
+            return res.status(401).json({message:'user has been banned'})
+        }
         const token = generateToken(userExist,'user')
         res.cookie('token',token);
 

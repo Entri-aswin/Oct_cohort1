@@ -14,6 +14,7 @@ const mentorSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: ["mentor", "admin"],
+      default:"mentor"
     },
     password: {
       type: String,
