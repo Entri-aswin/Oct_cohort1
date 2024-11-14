@@ -15,7 +15,6 @@ router.delete('/delete-account')
 router.get('/fetch-userList')
 router.get('/fetch-mentors')
 
-router.put("/user-freeze/:userId",)
 
 router.get('/check-mentor')
 

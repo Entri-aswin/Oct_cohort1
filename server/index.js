@@ -29,4 +29,3 @@ app.all("*", (req, res) => {
     res.status(404).json({ message: "end point does not exist" });
 });
 
-// http://localhost:3000/api/user/signup

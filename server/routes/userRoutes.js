@@ -9,13 +9,13 @@ router.post('/login',userLogin)
 
 router.get('/profile',userAuth,userProfile)
 router.put('/logout',userAuth ,userLogout   )
+router.get('/check-user',userAuth ,checkUser)
 
 
 router.put('/reset-password')
 router.put('/profile-update')
 router.delete('/delete-account')
 
-router.get('/check-user',userAuth ,checkUser)
 
 
 export {router as userRouter}
