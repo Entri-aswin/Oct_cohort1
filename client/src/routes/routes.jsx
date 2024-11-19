@@ -8,11 +8,13 @@ import { CourseDetailsPage } from "../pages/user/CourseDetailsPage";
 import { Signup } from "../pages/shared/Signup";
 import { Login } from "../pages/shared/Login";
 import { UserLayout } from "../layout/UserLayout";
+import { ErrorPage } from "../pages/shared/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <UserLayout />,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "",
@@ -47,7 +49,7 @@ export const router = createBrowserRouter([
                 element: <Cart />,
             },
             {
-                path: "coursePage",
+                path: "course",
                 element: <CoursePage />,
             },
             {
