@@ -9,6 +9,7 @@ router.post('/login',userLogin)
 
 router.get('/profile',userAuth,userProfile)
 router.put('/logout',userAuth ,userLogout   )
+
 router.get('/check-user',userAuth ,checkUser)
 
 
