@@ -3,7 +3,7 @@ import { Course } from "../models/courseModel.js";
 
 export const getCart = async (req, res) => {
     try {
-        const userId = req.user._id; 
+        const userId = req.user.id; 
 
         const cart = await Cart.findOne({ userId }).populate('courses.courseId');
         if (!cart) {
@@ -21,7 +21,7 @@ export const getCart = async (req, res) => {
 
 export const addCourseToCart = async (req, res) => {
     try {
-        const userId = req.user._id; 
+        const userId = req.user.id; 
         const { courseId } = req.body;
 
         // Find the course to ensure it exists and fetch its price
@@ -63,7 +63,7 @@ export const addCourseToCart = async (req, res) => {
 
 export const removeCourseFromCart = async (req, res) => {
     try {
-        const userId = req.user._id; 
+        const userId = req.user.id; 
         const { courseId } = req.body;
 
         // Find the user's cart
