@@ -3,8 +3,20 @@ import { useFetch } from "../../hooks/useFetch";
 import { axiosInstance } from "../../config/axiosInstance";
 import { useNavigate } from "react-router-dom";
 
-export const ProfilePage = () => {
-    const [profile, isLoading, error] = useFetch("/user/profile");
+export const ProfilePage = ({ role = "user" }) => {
+    const user = {
+        role: "user",
+        profile_api: "/user/profile",
+        logout_api: "/user/logout",
+    };
+
+    if (role === "mentor") {
+        user.role = "mentor";
+        user.profile_api = "/mentor/profile";
+        user.logout_api = "/mentor/logout";
+    }
+
+    const [profile, isLoading, error] = useFetch(user.profile_api);
     const navigate = useNavigate();
 
     console.log("profile====", profile);
@@ -13,7 +25,7 @@ export const ProfilePage = () => {
 
     const userLogout = async () => {
         try {
-            const response = await axiosInstance({ method: "PUT", url: "/user/logout" });
+            const response = await axiosInstance({ method: "PUT", url: user });
             navigate("/");
         } catch (error) {
             console.log(error);
@@ -29,7 +41,7 @@ export const ProfilePage = () => {
             </div>
 
             <button className="btn btn-warning" onClick={userLogout}>
-                Log out{" "}
+                Log out
             </button>
         </div>
     );

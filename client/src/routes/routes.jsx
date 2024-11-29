@@ -10,8 +10,9 @@ import { Login } from "../pages/shared/Login";
 import { UserLayout } from "../layout/UserLayout";
 import { ErrorPage } from "../pages/shared/ErrorPage";
 import { ProtectedRoute } from "./ProtectedRoute";
-import { ProfilePage } from "../pages/user/ProfilePage";
+import { ProfilePage } from "../pages/shared/ProfilePage";
 import { MentorLayout } from "../layout/MentorLayout";
+import { ProtectedRouteMentor } from "./ProtectedRouteMentor";
 
 export const router = createBrowserRouter([
     {
@@ -78,20 +79,27 @@ export const router = createBrowserRouter([
         children: [
             { path: "login", element: <Login role="mentor" /> },
             {
-                path: "courses",
-                // element:
-            },
-            {
-                path: "create-course",
-            },
-            {
-                path: "profile",
-            },
-            {
-                path: "track-progress",
-            },
-            {
-                path: "user-data",
+                element: <ProtectedRouteMentor />,
+                children: [
+                    {
+                        path: "courses",
+                        // element:
+                    },
+                    {
+                        path: "create-course",
+                    },
+                    {
+                        path: "profile",
+                        element:<ProfilePage role="mentor" />
+
+                    },
+                    {
+                        path: "track-progress",
+                    },
+                    {
+                        path: "user-data",
+                    },
+                ],
             },
         ],
     },

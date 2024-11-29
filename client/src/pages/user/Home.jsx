@@ -6,7 +6,7 @@ export const Home = () => {
 
     return (
         <div className="px-20">
-            {/* <section className="min-h-96 flex gap-20 px-20 py-10 w-full">
+            <section className="min-h-96 flex gap-20 px-20 py-10 w-full">
                 <div className="w-8/12">
                     <h1 className="font-bold text-4xl my-5  ">Welcome {user} </h1>
                     <p className="text-xl font-normal">
@@ -21,8 +21,8 @@ export const Home = () => {
                         alt="home-image"
                     />
                 </div>
-            </section> */}
-            <section class="min-h-96 flex gap-20 px-20 py-10 w-full animate-pulse">
+            </section>
+            {/* <section class="min-h-96 flex gap-20 px-20 py-10 w-full animate-pulse">
                 <div class="w-8/12">
                     <div class="h-10 bg-gray-200 rounded mb-5"></div>
                     <div class="h-6 bg-gray-200 rounded w-full"></div>
@@ -32,7 +32,7 @@ export const Home = () => {
                 <div class="w-5/12">
                     <div class="w-full h-64 bg-gray-200 rounded"></div>
                 </div>
-            </section>
+            </section> */}
             <section className="my-16">
                 <Carrousel />
             </section>

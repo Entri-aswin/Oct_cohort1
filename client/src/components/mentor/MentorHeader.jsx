@@ -29,7 +29,7 @@ export const MentorHeader = () => {
             </div>
             <div className="navbar-end">
                 <button className="btn btn-ghost btn-circle">
-                    <DarkMode />
+                    <DarkMode sample="2" />
                 </button>
                 <button className="btn btn-ghost btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
