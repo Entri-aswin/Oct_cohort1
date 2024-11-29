@@ -13,6 +13,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { ProfilePage } from "../pages/shared/ProfilePage";
 import { MentorLayout } from "../layout/MentorLayout";
 import { ProtectedRouteMentor } from "./ProtectedRouteMentor";
+import { CreateCourse } from "../pages/mentor/CreateCourse";
 
 export const router = createBrowserRouter([
     {
@@ -87,11 +88,11 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: "create-course",
+                        element: <CreateCourse />,
                     },
                     {
                         path: "profile",
-                        element:<ProfilePage role="mentor" />
-
+                        element: <ProfilePage role="mentor" />,
                     },
                     {
                         path: "track-progress",
