@@ -23,7 +23,11 @@ export const mentorSignup = async (req, res, next) => {
         await newUser.save();
 
         const token = generateToken(newUser, "mentor");
-        res.cookie("token", token);
+        res.cookie("token", token, {
+            sameSite: "None",
+            secure: true,
+            httpOnly: true,
+        });
 
         res.json({ message: "mentor created successfully" });
     } catch (error) {
@@ -52,7 +56,11 @@ export const mentorLogin = async (req, res, next) => {
         }
 
         const token = generateToken(userExist, "mentor");
-        res.cookie("token", token);
+        res.cookie("token", token, {
+            sameSite: "None",
+            secure: true,
+            httpOnly: true,
+        });
 
         res.json({ message: "mentor login successfully" });
     } catch (error) {
@@ -73,7 +81,11 @@ export const mentorProfile = async (req, res, next) => {
 
 export const mentorLogout = async (req, res, next) => {
     try {
-        res.clearCookie("token");
+        res.clearCookie("token", {
+            sameSite: "None",
+            secure: true,
+            httpOnly: true,
+        });
 
         res.json({ message: "user logout success" });
     } catch (error) {
