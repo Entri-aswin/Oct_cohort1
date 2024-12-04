@@ -28,10 +28,10 @@ export const CreateCourseForm = ({ course }) => {
                 method: "POST",
                 data: formData,
             });
-            toast.success('course created successfully')
+            toast.success("course created successfully");
         } catch (error) {
             console.log(error);
-            toast.error('Error while creating course')
+            toast.error("Error while creating course");
         }
     };
 

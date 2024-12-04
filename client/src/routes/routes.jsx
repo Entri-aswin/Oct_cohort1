@@ -15,6 +15,7 @@ import { MentorLayout } from "../layout/MentorLayout";
 import { ProtectedRouteMentor } from "./ProtectedRouteMentor";
 import { CreateCourse } from "../pages/mentor/CreateCourse";
 
+
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
                         path: "order",
                         element: <h1> orders page</h1>,
                     },
+                    {
+                        path:"payment/success",
+                        element: <h2>Payment success</h2>
+                    }
                 ],
             },
         ],
